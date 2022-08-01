@@ -1,0 +1,14 @@
+body {
+    background-color: #839cce; 
+}
+
+h1, 
+h2 {
+    color: #6e7e94;
+    font-family: 'Montserrat', sans-serif;
+}
+
+a {
+    color: #3290A6;
+    font-family: 'Archivo', sans-serif;
+}
