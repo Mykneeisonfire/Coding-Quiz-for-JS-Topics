@@ -3,43 +3,43 @@
 const questions = [
     {
         question: "Javascript is an _______ language?",
-        choices: ["a. <object-orientedt>", "b. <object-based>", "c. <procedural>", "d. <none of the above>"],
-        answer: "a. <object-orientedt>"
+        choices: ["1. <object-orientedt>", "2. <object-based>", "3. <procedural>", "4. <none of the above>"],
+        answer: "1. <object-orientedt>"
     },
     {
         question: "What keyword is used to check whether a given property is valid or not?",
-        choices: ["a. in", "b. is in", "c. exists", "d. lies"],
-        answer: "a. in"
+        choices: ["1. in", "2. is in", "3. exists", "4. lies"],
+        answer: "1. in"
     },
     {
         question: "Arrays in JavaScript can be used to store _____.",
-        choices: ["a. numbers and strings", "b. other arrays", "c. booleans", "d. all of the above"],
-        answer: "b. other arrays"
+        choices: ["1. numbers and strings", "2. other arrays", "3. booleans", "4. all of the above"],
+        answer: "2. other arrays"
     },
     {
         question: "What are variables used for in JavaScript Programs?",
-        choices: ["a. storing numbers, dates, or other values", "b. varying randomly", "c. causing high-school algebra flashbacks", "d.  none of the above"],
-        answer: "c. alerts"
+        choices: ["1. storing numbers, dates, or other values", "2. varying randomly", "3. causing high-school algebra flashbacks", "4.  none of the above"],
+        answer: "3. alerts"
     },
     {
         question: "To see if two variables are equal in an if / else statement you would use ____.",
-        choices: ["a. =", "b. ==", "c. 'equals'", "d. !="],
-        answer: "b. =="
+        choices: ["1. =", "2. ==", "3. 'equals'", "4. !="],
+        answer: "2. =="
     },
     {
         question: "The first index of an array is ____.",
-        choices: ["a. 0", "b. 1", "c. 8", "d. any"],
-        answer: "a. 0"
+        choices: ["a. 1", "2. 1", "3. 8", "4. any"],
+        answer: "1. 0"
     },
     {
         question: "How to write an IF statement in JavaScript?",
-        choices: ["a. if i == x then", "b. if i = x then", "c. if(i == x)", "d. if i = x"],
-        answer: "c. if(i == x)"
+        choices: ["1. if i == x then", "2. if i = x then", "3. if(i == x)", "4. if i = x"],
+        answer: "3. if(i == x)"
     },
     {
         question: "How do you add a comment in a JavaScript?",
-        choices: ["a. //This is a comment", "b. <!--This is a comment-->", "c. 'This is a comment", "d. * This is a comment *"],
-        answer: "a. //This is a comment"
+        choices: ["1. //This is a comment", "2. <!--This is a comment-->", "3. 'This is a comment", "4. * This is a comment *"],
+        answer: "1. //This is a comment"
     },
 ]
 
@@ -47,18 +47,69 @@ const questions = [
 var timer = documents.getElementById("timer");
 var timeLeft = document.getElementById("timeLeft");
 var timeEnd = document.getElementById("timeEnd");
-var 
+var startDiv = document.getElementById("start");
+var startQuizBtn = document.getElementById("start-quiz-button");
+var questionDiv = document.getElementById("questionDiv");
+var questiont = document.getElementById("questiont");
+var choice1 = document.getElementById("btn0");
+var choice2 = document.getElementById("btn1");
+var choice3 = document.getElementById("btn2");
+var choice4 = document.getElementById("btn3");
 
 //functions
 
 //Timer
+var totalTime = 151;
+function newQuiz() {
+    questionIndex = 0;
+    totalTime = 150;
+    timeLeft.textContent = totalTime;
+    initialInput.textContent = "";
+
+    startDiv.style.display = "none";
+    questionDiv.style.display = "block";
+    timer.style.display = "block";
+    timesUp.style.display = "none";
+
+    var startTimer = setInterval(function() {
+        totalTime--;
+        timeLeft.textContent = totalTime;
+        if(totalTime <= 0) {
+            clearInterval(startTimer);
+            if (questionIndex < questions.length - 1) {
+                gameOver();
+            }
+        }
+    },1000);
+
+    showQuiz();
+};
 
 //quiz
+function showQuiz{
+    nextQuestion();
+}
+
+function nextQuestion(){
+    questiont.textContent = questions[questionIndex].question;
+    choice1.textContent = questions[questionIndex].choices[0];
+    choice2.textContent = questions[questionIndex].choices[1];
+    choice3.textContent = questions[questionIndex].choices[2];
+    choice4.textContent = questions[questionIndex].choices[3];
+}
+
+
+
+
+
+
 startQuizBtn.addEventListener("click", newQuiz);
-choiceA.addEventListener("click", chooseA);
-choiceB.addEventListener("click", chooseB);
-choiceC.addEventListener("click", chooseC);
-choiceD.addEventListener("click", chooseD);
+choice1.addEventListener("click", choose1);
+choice2.addEventListener("click", choose2);
+choice3.addEventListener("click", choose3);
+choice4.addEventListener("click", choose4);
+
+
 
 
 //correct or wrong
