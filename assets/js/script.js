@@ -1,3 +1,5 @@
+//questions
+
 const questions = [
     {
         question: "Javascript is an _______ language?",
@@ -40,3 +42,27 @@ const questions = [
         answer: "a. //This is a comment"
     },
 ]
+
+// variables/elements
+var timer = documents.getElementById("timer");
+var timeLeft = document.getElementById("timeLeft");
+var timeEnd = document.getElementById("timeEnd");
+var 
+
+//functions
+
+//Timer
+
+//quiz
+startQuizBtn.addEventListener("click", newQuiz);
+choiceA.addEventListener("click", chooseA);
+choiceB.addEventListener("click", chooseB);
+choiceC.addEventListener("click", chooseC);
+choiceD.addEventListener("click", chooseD);
+
+
+//correct or wrong
+
+//game end
+
+//scoring
