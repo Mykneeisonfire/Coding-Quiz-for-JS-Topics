@@ -56,13 +56,17 @@ var choice2 = document.getElementById("btn1");
 var choice3 = document.getElementById("btn2");
 var choice4 = document.getElementById("btn3");
 
+var correctAnswer = 0;
+var questionNumber = 0;
+var scoreResult;
+var questionIndex = 0;
 //functions
 
 //Timer
 var totalTime = 151;
 function newQuiz() {
     questionIndex = 0;
-    totalTime = 150;
+    totalTime = 100;
     timeLeft.textContent = totalTime;
     initialInput.textContent = "";
 
@@ -85,8 +89,9 @@ function newQuiz() {
     showQuiz();
 };
 
+
 //quiz
-function showQuiz{
+function showQuiz() {
     nextQuestion();
 }
 
