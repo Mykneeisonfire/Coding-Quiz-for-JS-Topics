@@ -29,7 +29,7 @@
 <!--start screen  -->
 
                   <div id="start" class="m-2 justify-content-center">
-                      <h1 class="font-weight-bold pl-5 pr-5">JS Coding Quiz</h1>
+                      <h1 class="font-weight-bold">JS Coding Quiz</h1>
                         <p class="p-5">There is little time! Hurry and answer the questions before the timer runs out! you lose time for every incorrect answer and gain points for time left over!</p>
                             <div class="col text-center">
                                 <button type="button" id="start-quiz-button" class="btn btn-info ml-5 align-center">Start the Quiz</button>
@@ -39,8 +39,8 @@
 <!--quiz   -->
 
                   <div id="questionDiv" style="display: none;">
-                    <p id="questionTitle" class="pl-5 ml-2 pt-5 justify-content-center font-weight-bold"></p>
-                        <div class="pl-5 pt-2 pb-3 m-2 justify-content-center">
+                    <p id="questionTitle" class="justify-content-center font-weight-bold"></p>
+                        <div class="justify-content-center">
                             <p><button id="btn0" class="btn btn-dark"></button></p>
                             <p><button id="btn1" class="btn btn-dark"></button></p>
                             <p><button id="btn2" class="btn btn-dark"></button></p>
@@ -49,6 +49,36 @@
                             <p id="answerCheck" style="display: none;"></p>
                         </div>
                   </div>
+<!-- score  -->
+
+<div class="justify-content-center font-weight-bold" id="summary" style="display: none;">
+    <div class="col-2"></div>
+    <div class="col-8 text-left">
+        <h2 class="font-weight-bold">Your final score is <span id="finalScore"></span> !</h2>
+        <form>
+            <p>Enter your initials: <input id="initialInput" class="form-control" type="text">
+            <button type="submit" id="submitInitialBtn" class="btn btn-info">Submit</button>
+            </p>
+        </form>
+    </div>
+<div class="col-2"></div>
+</div>
+
+<!-- highscores section -->
+
+<div id="highScoreSection" class= "justify-content-center font-weight-bold" style="display: none;">
+<h2 class="font-weight-bold">High Scores</h2>                   
+
+<div id="listOfHighScores" class="list-group list-group-flush"></div>
+
+<p>
+    <button type="submit" class="btn btn-info" id="goBackBtn">Go Back</button>
+    <button type="submit" class="btn btn-info" id="clearHighScoreBtn">Clear High Scores</button>
+</p>
+
+</div>
+</main>
+<div class="col-md-2"></div>
 
 
  
